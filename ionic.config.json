@@ -1,0 +1,7 @@
+{
+  "name": "appCinco",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
