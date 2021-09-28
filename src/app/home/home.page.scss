@@ -1,27 +1,19 @@
-#container {
+.pedro{
+  align-content: center;
+  align-items: center;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-content{
+  --background: #46B4EB;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+@keyframes ld-vortex {
+  0%, 60% { animation-timing-function: cubic-bezier(0.3, 0, 1, 0.7); }
+  0% { opacity: 0; transform: rotate(-1800deg) scale(0.3); }
+  60% { opacity: 1; transform: rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: rotate(0deg) scale(1); }
 }
-
-#container a {
-  text-decoration: none;
+.ld.ld-vortex {
+  animation: ld-vortex 1s infinite linear; ; 
 }

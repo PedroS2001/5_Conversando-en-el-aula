@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title align="center"> <strong>INGRESO DE CREDENCIALES</strong> </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form" [formGroup]="userForm" (ngSubmit)="signIn(userForm.value)">
+    <ion-item lines="full" class="pepin">
+      <ion-label position="fixed">Email</ion-label>
+      <ion-input type="text" required formControlName="email" [(ngModel)]="correo" name="correo" ></ion-input>
+    </ion-item>
+
+    <ion-item lines="" class="pepin">
+      <ion-label position="fixed">Contraseña</ion-label>
+      <ion-input type="password" required formControlName="password" [(ngModel)]="clave" name="clave" ></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary"  expand="full" strong [disabled]="!userForm.valid">Ingresar</ion-button>
+      </ion-col>
+        <ion-col>
+        <ion-button (click)="limpiar()" color="medium"  expand="full" strong>Limpiar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-label class="ion-text-center" color="danger">{{errorMsg}}</ion-label>
+
+
+    <h4>O ingrese rapido como...</h4>
+
+    <ion-row align="center">
+      <ion-col>
+        <ion-button (click)="isAdmin()" strong >
+          <ion-icon name="at"></ion-icon>
+          Admin
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="isUsuario()" strong >
+          <ion-icon name="at"></ion-icon>
+          Usuario
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row align="center">
+      <ion-col>
+        <ion-button (click)="isInvitado()" strong >
+          <ion-icon name="at"></ion-icon>
+          Invitado
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="isAnonimo()" strong >
+          <ion-icon name="at"></ion-icon>
+          Anonimo
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row align="center">
+      <ion-col>
+        <ion-button (click)="isTester()" strong >
+          <ion-icon name="at"></ion-icon>
+          Tester
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

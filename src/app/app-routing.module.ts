@@ -11,6 +11,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'principal',
+    loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'chats/a',
+    loadChildren: () => import('./chats/a/a.module').then( m => m.APageModule)
+  },
+  {
+    path: 'chats/b',
+    loadChildren: () => import('./chats/b/b.module').then( m => m.BPageModule)
+  },
 ];
 
 @NgModule({
